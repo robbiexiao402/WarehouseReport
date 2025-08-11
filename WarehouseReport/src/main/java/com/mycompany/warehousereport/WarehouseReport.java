@@ -1,25 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
 package com.mycompany.warehousereport;
 
+import java.util.Scanner;
+
+/**
+ *
+ * @author lab_services_student
+ */
 public class WarehouseReport {
-    final static int[][] warehouseStock = {
-        {
-            10, 20, 30, 40
-        },
-        {
-            11, 21, 31, 41
-        }, 
-        {
-            12, 22, 32, 42
-        }
-    };
+
+    final static int[][] warehouseStock = new int[3][4];
     final static int WEEKS = 4;
     final static String[] warehouseItems = {
-      "Shoes",
-      "T-Shirts",
-      "Hats"
+        "Shoes",
+        "T-Shirts",
+        "Hats"
     };
-    
+
+    public static void stockInput() {
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < warehouseStock.length; i++) {
+            System.out.println("Enter stock amounts for: " + (warehouseItems[i]));
+            for (int j = 0; j < WEEKS; j++) {
+                while (true) {
+                    System.out.println("Week " + (j + 1));
+                    if (scanner.hasNextInt()) {
+                        int getAmount = scanner.nextInt();
+                        if (getAmount >= 0) {
+                            warehouseStock[i][j] = getAmount;
+                            break;
+                        } else {
+                            System.out.println("Integer must be greater than 0.");
+                        }
+                    } else {
+                        System.out.println("Invalid integer input.");
+                        scanner.next();
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
+        stockInput();
+
         int totalAmount = 0;
         System.out.println("WAREHOUSE STOCK REPORT: ");
         System.out.println("--------------");
@@ -34,6 +60,6 @@ public class WarehouseReport {
             System.out.println("Weekly total: " + totalAmount);
             System.out.println();
             totalAmount = 0;
-        } 
+        }
     }
 }
