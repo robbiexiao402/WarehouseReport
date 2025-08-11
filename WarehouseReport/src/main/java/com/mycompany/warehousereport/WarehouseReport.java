@@ -1,6 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
 package com.mycompany.warehousereport;
+
 import java.util.Scanner;
 
+/**
+ *
+ * @author lab_services_student
+ */
 public class WarehouseReport {
 
     final static int[][] warehouseStock = new int[3][4];
@@ -35,9 +43,7 @@ public class WarehouseReport {
         }
     }
 
-    public static void main(String[] args) {
-        stockInput();
-
+    public static void generateReport() {
         int totalAmount = 0;
         System.out.println("WAREHOUSE STOCK REPORT: ");
         System.out.println("--------------");
@@ -53,5 +59,10 @@ public class WarehouseReport {
             System.out.println();
             totalAmount = 0;
         }
+    }
+
+    public static void main(String[] args) {
+        stockInput();
+        generateReport();
     }
 }
