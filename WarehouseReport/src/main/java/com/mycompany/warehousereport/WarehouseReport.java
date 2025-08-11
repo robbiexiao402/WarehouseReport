@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package com.mycompany.warehousereport;
-
 import java.util.Scanner;
 
-/**
- *
- * @author lab_services_student
- */
 public class WarehouseReport {
 
     final static int[][] warehouseStock = new int[3][4];
