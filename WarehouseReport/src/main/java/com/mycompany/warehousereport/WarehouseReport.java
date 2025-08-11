@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.warehousereport;
 
-/**
- *
- * @author lab_services_student
- */
 public class WarehouseReport {
     final static int[][] warehouseStock = {
         {
